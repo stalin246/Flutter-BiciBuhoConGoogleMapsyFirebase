@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3515536203",
+    "project_id": "login-y-registro-flutter",
+    "storage_bucket": "login-y-registro-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3515536203:android:b6cd10e39b292870918ece",
+        "android_client_info": {
+          "package_name": "com.example.flutter_login_register"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3515536203-f79vepb6ok2t7a6m0g4m9lo70dou1hkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWaa2g34_1AP9vEW8ljmmOGhqkGJnI2o0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3515536203-f79vepb6ok2t7a6m0g4m9lo70dou1hkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
