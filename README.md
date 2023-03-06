@@ -93,6 +93,46 @@ Establecido el login y registro podremos poner un splash screen que funcione al 
 ### Lista de usuarios(Usuario Común)
 Una vez que un usuario/ciclista haya iniciado sesión en su aplicación de Flutter y haya autenticado sus credenciales con Firebase, podrá acceder a la base de datos de Firestore para recuperar una lista de usuarios registrados en la colección correspondiente. Para ello, se puede utilizar un StreamBuilder que escuche los cambios en la colección y muestre los datos actualizados en la interfaz de usuario de la aplicación como se observa en la estructura del documento [homeScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/homeScreen.dart)
 
+```sh
+
+Stream<QuerySnapshot> get usersStream => _usersRef.snapshots();
+body: StreamBuilder<QuerySnapshot>(
+      stream: usersStream,
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text('Error: ${snapshot.error}');
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        }
+
+        return ListView.builder(
+  itemCount: snapshot.data!.docs.length,
+  itemBuilder: (context, index) {
+    DocumentSnapshot documentSnapshot = snapshot.data!.docs[index];
+    return ListTileTheme(
+      selectedColor: Colors.blue, // cambiar el color de fondo cuando se selecciona un elemento
+      child: ListTile(
+        title: Text(
+          documentSnapshot['email'],
+          style: TextStyle(
+            fontWeight: FontWeight.bold, // cambiar el estilo de texto del título
+            fontSize: 16.0,
+          ),
+        ),
+        subtitle: Text(
+          documentSnapshot['rol'],
+          style: TextStyle(
+            color: Colors.grey, // cambiar el color de texto del subtítulo
+          ),
+        ),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+        ),
+      ),
+```
+
 ### Gestión de usuarios(Usuario Admin CRUD)
 
 ### Geolocalización con Mapa de Google
