@@ -213,6 +213,25 @@ Future<void> deleteUserAccount(String uid, Type userUID) async {
 }
 ```
 
+Estos métodos son utilizados en el archivo [homeScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/homeScreen.dart) para que solamente los usuarios con los correos electronicos autorizados para administrar puedan realizar operaciones de gestión de usuarios en la aplicación.
+
+```sh
+child: Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        if (_auth.currentUser!.email == 'epfarinango@gmail.com' || _auth.currentUser!.email == 'stalinvalencia24@gmail.com')
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Admin(),
+                ),
+              );
+            },
+```
+
+
 
 
 ### Geolocalización con Mapa de Google
