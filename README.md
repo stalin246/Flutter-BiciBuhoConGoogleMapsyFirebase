@@ -9,12 +9,14 @@
 - Funcionamiento de la aplicación APK
 
 ## Despliegue de la aplicación:
-- La aplicación se encuentra desplegada en el siguiente sitio [APKFab](https://apkfab.com/bicib%C3%BAho/com.example.flutter_login_register/apk?h=539ee2da608a888dfddeaed9fbcce2dc1c76a83a823d88a1a6ea5d94ce25d911) una vez descargada podremos utilizarla en nuestro dispositivo Android
+- La aplicación BiciBúho se encuentra desplegada en el siguiente sitio [APKFab](https://apkfab.com/bicib%C3%BAho/com.example.flutter_login_register/apk?h=539ee2da608a888dfddeaed9fbcce2dc1c76a83a823d88a1a6ea5d94ce25d911) una vez descargada podremos utilizarla en nuestro dispositivo Android
 
 ![image](https://user-images.githubusercontent.com/77359338/223029442-699edc24-43c1-4fb7-96d1-28ab30fb7ca6.png)
 
+- Otra alternativa en donde se encuentra desplegada la aplicación es Aptoide, para acceder al APK(BiciBúho) es necesario tener instalada la tienda de [Aptoide](https://es.aptoide.com/) y el link que nos redirija a la [aplicación](https://bicibho.es.aptoide.com/?store_name=polibuho&app_id=64506641).
 
 
+![image](https://user-images.githubusercontent.com/77359338/223124978-46dba864-b255-4d59-b919-93d2cd019e11.png)
 # Configuración del poyecto
 
 ## Firebase 
