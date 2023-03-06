@@ -87,6 +87,8 @@ Establecido el login y registro podremos poner un splash screen que funcione al 
 
 #### Funcionamiento en el móvil
 
+https://user-images.githubusercontent.com/77359338/223019470-7a564f1d-da65-4f6f-82b7-55cfdda9d9eb.mp4
+
 
 
 
@@ -134,7 +136,7 @@ body: StreamBuilder<QuerySnapshot>(
 ```
 Aqui tambien se muestra una implementación básica de un ListView.builder que utiliza una instancia de QuerySnapshot para obtener una lista de documentos de usuarios desde Firestore y muestra los datos en la interfaz de usuario de la aplicación.
 
-
+#### Funcionamiento en el móvil
 
 <img src="https://user-images.githubusercontent.com/75056800/223001741-fea6a499-5f03-4f62-9463-9fd381f21ce3.jpeg" alt="listUsers" width="200" style="display: block; margin: 0 auto;">
 
@@ -232,7 +234,7 @@ child: Row(
 ```
 si un usuario inicia sesión con uno de los correos electrónicos autorizados para administrar, se mostrará el texto "Administrar usuarios" en la pantalla de inicio [admin.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/admin.dart) de la aplicación. Al hacer clic en este texto, se redirigirá al usuario a la pantalla de administración de usuarios, donde se podrán realizar operaciones de gestión de usuarios, como editar o eliminar usuario.
 
-
+#### Funcionamiento en el móvil
 
 <div style="display: flex; justify-content: center; align-items: center;">
  
@@ -297,9 +299,7 @@ class GpsState extends Equatable {
 ```
 En este código se define una clase llamada GpsBloc que se encarga de manejar el estado del permiso de GPS y su activación. Se utilizan métodos para verificar si el permiso está activado y si el usuario ha concedido el permiso de ubicación, y se actualiza el estado en consecuencia. Cuando se produce un evento que indica un cambio en el estado del permiso de GPS, se llama a un método que obtiene el nuevo estado y emite un nuevo estado a través de una función yield. En resumen, el archivo se encarga de mantener y actualizar el estado del permiso de GPS.
 
-
-
-
+#### Funcionamiento en el móvil
 
 https://user-images.githubusercontent.com/75056800/223010028-682c0f25-06e0-4efb-b356-0da618feb4b0.mp4
 
