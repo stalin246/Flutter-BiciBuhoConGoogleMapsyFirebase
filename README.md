@@ -81,7 +81,7 @@ Para usar los servicios de Google Maps se debe agregar/instalar la siguiente dep
 google_maps_flutter: ^2.2.5
 
 ```
-**Aviso⚠️:** Se debe contar con el **MapSDK para Android** ofrecido por la API de Google Maps y servicios para emplear el Apikey en el archivo [AndroidManifest.xml](https://github.com/stalin246/Flutter-GeolocalizacionConGoogleMaps/blob/v1.1/android/app/src/main/AndroidManifest.xml)
+**⚠️Aviso:** Se debe contar con el **MapSDK para Android** ofrecido por la API de Google Maps y servicios para emplear el Apikey en el archivo [AndroidManifest.xml](https://github.com/stalin246/Flutter-GeolocalizacionConGoogleMaps/blob/v1.1/android/app/src/main/AndroidManifest.xml)
 
 ```
 <meta-data 
