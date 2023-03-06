@@ -78,7 +78,17 @@ google_maps_flutter: ^2.2.5
 
 ## Funcionalidad del código en el Proyecto de Flutter
 
-### Inicios de sesión y registro
+### Inicio de sesión y registro
+Para el inicio de sesión se utiliza la autenticación de Firebase importando **firebase_auth.dart** y **cloud_firestore.dart** para la colección denominada "Users"que almacenará el mail y rol que tendrá en su defecto el ciclista. 
+
+En el registro definimos condiciones que se tendrá al iniciar sesión y se lo hará por correo y contraseña y que una vez registrado pase directo a la pantalla del home dependiendo si es Admin o User. La lógica la encontramos en los archivos [login.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/register.dart) y [gps_acces_screen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/register.dart)
+
+Establecido el login y registro podremos poner un splash screen que funcione al iniciar la aplicación y una pantalla deslizable que nos direcciones al login, la lógica del splash lo vemos aquí [splashScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/splashScreen.dart) y lo utilizamos en la ruta que definimos en [routes.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/navigation/routes.dart), además para la otra función que se mencionó creamos un archivo [startScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/startScreen.dart) y su clase invocara al **login.dart**. Esta clase se la utiliza en las rutas de antes.
+
+#### Funcionamiento en el móvil
+
+
+
 
 ### Lista de usuarios(Usuario Común)
 
