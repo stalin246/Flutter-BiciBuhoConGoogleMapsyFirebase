@@ -264,5 +264,40 @@ Esta aplicación requiere acceso al GPS y a Internet, por ello se deberá agrega
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 ```
 
+Dentro del archivo [gps_bloc.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/blocs/gps/gps_bloc.dart) se define la clase GpsBloc que extiende de la clase Bloc<GpsEvent, GpsState>. Esta clase maneja el estado del permiso de GPS y su activación.
+
+```ssh
+class GpsState extends Equatable {
+  
+  final bool isGpsActive;
+  final bool isGpsPermissionGranted;
+
+  bool get isAllGranted => isGpsActive && isGpsPermissionGranted;
+  const GpsState({
+    required this.isGpsActive, 
+    required this.isGpsPermissionGranted
+    });
+
+  GpsState copyWith({
+    bool? isGpsActive,
+    bool? isGpsPermissionGranted,
+  }) {
+    return GpsState(
+      isGpsActive: isGpsActive ?? this.isGpsActive,
+      isGpsPermissionGranted: isGpsPermissionGranted ?? this.isGpsPermissionGranted,
+    );
+  }
+  
+  @override
+  List<Object> get props => [isGpsActive, isGpsPermissionGranted];
+  @override 
+  String toString() => 'GpsState {isGpsActive: $isGpsActive, isGpsPermissionGranted: $isGpsPermissionGranted}';
+
+}
+```
+En este código se define una clase llamada GpsBloc que se encarga de manejar el estado del permiso de GPS y su activación. Se utilizan métodos para verificar si el permiso está activado y si el usuario ha concedido el permiso de ubicación, y se actualiza el estado en consecuencia. Cuando se produce un evento que indica un cambio en el estado del permiso de GPS, se llama a un método que obtiene el nuevo estado y emite un nuevo estado a través de una función yield. En resumen, el archivo se encarga de mantener y actualizar el estado del permiso de GPS.
+https://user-images.githubusercontent.com/75056800/223009429-6702b0f4-4bd5-47a3-a3f0-f0188fe6e946.mp4
+
+
 
 
