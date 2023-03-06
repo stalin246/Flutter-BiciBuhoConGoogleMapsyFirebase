@@ -140,6 +140,80 @@ Aqui tambien se muestra una implementación básica de un ListView.builder que u
 
 
 ### Gestión de usuarios(Usuario Admin CRUD)
+El archivo [firebase_service.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/firebase_service.dart) es un archivo que contiene una clase "FirebaseService" que se utiliza para interactuar con Firebase y gestionar la información de los usuarios. La clase FirebaseService tiene los siguientes métodos:
+
+getUser: 
+El método devuelve una lista de documentos (DocumentSnapshot) que representan los documentos en la colección 'users'. Estos documentos contienen la información de cada usuario registrado en la aplicación, como correo electrónico y el rol.
+
+```sh
+ Future<List<DocumentSnapshot>> getUsers() async {
+    QuerySnapshot querySnapshot = await firestore.collection('users').get();
+    return querySnapshot.docs;
+  }
+
+```
+
+addUser:
+Este método se utiliza para agregar un nuevo usuario a la colección 'users' en Firebase Firestore. El nuevo usuario se representa mediante un nuevo documento que contiene su correo electrónico y rol.
+
+```sh
+ Future<void> addUser(String email, String rol) async {
+    await firestore.collection('users').add({
+      'email': email,
+      'rol': rol,
+    });
+  }
+```
+updateUser:
+Este método e utiliza para actualizar la información de un usuario existente en la colección 'users' en Firebase Firestore. El usuario se representa mediante un documento específico que se identifica por su identificador único (id) y se actualiza con el nuevo correo electrónico y rol proporcionados (email y rol).
+
+```sh
+ Future<void> updateUser(String id, String email, String rol) async {
+    await firestore.collection('users').doc(id).update({
+      'email': email,
+      'rol': rol,
+    });
+  }
+
+```
+deleteUser:
+Este método e utiliza para eliminar la cuenta de un usuario registrado en la aplicación y todos sus documentos relacionados en la colección 'usersLocations'. El método utiliza una transacción de lote para eliminar los documentos de forma segura y cierra la sesión del usuario eliminado después de la eliminación exitosa.
+
+
+```sh
+Future<void> deleteUserAccount(String uid, Type userUID) async {
+  final user = FirebaseAuth.instance.currentUser;
+  if (user != null && user.uid == uid) {
+    // Si se intenta eliminar la cuenta del usuario actual, mostrar un mensaje de error
+    Fluttertoast.showToast(msg: 'No puedes eliminar tu propia cuenta');
+    return;
+  }
+  final userRef = FirebaseFirestore.instance.collection('users').doc(uid);
+  final userDoc = await userRef.get();
+  if (!userDoc.exists) {
+    Fluttertoast.showToast(msg: 'El usuario no existe');
+    return;
+  }
+  final batch = FirebaseFirestore.instance.batch();
+  // Eliminar el usuario y todos sus documentos relacionados
+  batch.delete(userRef);
+  final docsToDelete = await FirebaseFirestore.instance
+      .collection('usersLocations')
+      .where('email', isEqualTo: userDoc.get('email'))
+      .get();
+  for (final doc in docsToDelete.docs) {
+    batch.delete(doc.reference);
+  }
+  await batch.commit();
+  
+  // Cerrar la sesión del usuario eliminado
+  await FirebaseAuth.instance.signOut();
+  
+  Fluttertoast.showToast(msg: 'Usuario eliminado');
+}
+```
+
+
 
 ### Geolocalización con Mapa de Google
 Para realizar la funcionalidad que va a tener el mapa una vez que el usuario/ciclista se registre y se dé click en el icono de mapa, la aplicación ahí debe solicitar permisos para que pueda utilizar la funcionalidad de GPS dentro del dispositivo móvil, para ello creamos una carpeta [gps](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/tree/master/lib/blocs/gps)
