@@ -77,6 +77,14 @@ google_maps_flutter: ^2.2.5
 ```
 
 ## Funcionalidad del código en el Proyecto de Flutter
+
+### Inicios de sesión y registro
+
+### Lista de usuarios(Usuario Común)
+
+### Gestión de usuarios(Usuario Admin CRUD)
+
+### Geolocalización con Mapa de Google
 Para realizar la funcionalidad que va a tener el mapa una vez que el usuario/ciclista se registre y se dé click en el icono de mapa, la aplicación ahí debe solicitar permisos para que pueda utilizar la funcionalidad de GPS dentro del dispositivo móvil, para ello creamos una carpeta [gps](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/tree/master/lib/blocs/gps)
 que alojara la parte lógica para solicitar estos permisos para que finalmente el archivo  [gps_bloc.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/blocs/gps/gps_bloc.dart)
  contenga la función global del GPS y sea utilizado más adelante. 
