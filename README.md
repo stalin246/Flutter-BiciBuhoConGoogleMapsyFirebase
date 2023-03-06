@@ -5,7 +5,9 @@
 - Luis Valencia
 
 # Configuración del poyecto
+
 ## Firebase 
+
 
 
 Para configurar los servicios que utilizaremos de Firebase en el proyecto nos dirigimos en la sección del archivo [pubspec.yaml](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/pubspec.yaml) y podemos agregar o instalar las dependencias de Firebase que será la autenticación, core de Firebase y colecciones .
@@ -74,17 +76,12 @@ google_maps_flutter: ^2.2.5
 />
 ```
 
+## Funcionalidad del código en el Proyecto de Flutter
+Para realizar la funcionalidad que va a tener el mapa una vez que el usuario/ciclista se registre y se dé click en el icono de mapa, la aplicación ahí debe solicitar permisos para que pueda utilizar la funcionalidad de GPS dentro del dispositivo móvil, para ello creamos una carpeta [gps](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/tree/master/lib/blocs/gps)
+que alojara la parte lógica para solicitar estos permisos para que finalmente el archivo  [gps_bloc.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/blocs/gps/gps_bloc.dart)
+ contenga la función global del GPS y sea utilizado más adelante. 
+ Definido los permisos podemos utilizar esa parte logica para mostrar en el dispositivo mediante el codigo que encontramos en el archivo  [gps_acces_screen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/screens/gps_acces_screen.dart)
+
+Ya configurado los apikey de gooole Maps, en la carpeta  [screens](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/tree/master/lib/screens) y archivo  [map_screen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/screens/map_screen.dart) trabajamos con la lógica y la parte ui que tendrá el mapa y definimos las propiedades principales que se utilizaran que en este caso será la ubicación a tiempo real en el mapa de Google del usuario logueado, marcadores a tiempo real para cada usuario/ciclistas y que esta información se actualice en Firestore según se cambie la ubicación en donde se creara una colección denominada **userLocations** con campo y valor(location y timestamp) y esta colección estará asociada su ID con el **nombre del correo** que está alojada como campo en otra colección que es la principal denominada **users**, finalmente en el archivo  [loading_screen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/screens/loading_screen.dart) se crea una clase que englobe la pantalla de habilitacion de GPS y el mapa. Mediante este proceso se puede mostrar las ubicaciones en el mapa de Google a través de marcadores del usuario/ciclista registrado una vez que ellos inicialicen esa función que se encuentra en el archivo [homeScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/homeScreen.dart) como botón flotante de **mapa**
 
 
-
-Para configuras los se
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
