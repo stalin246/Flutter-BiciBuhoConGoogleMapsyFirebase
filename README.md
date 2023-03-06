@@ -1,4 +1,4 @@
-# Aplicación de geolocalización a tiempo real "BiciBúho"
+# Aplicación de geolocalización a tiempo real "BiciBúho" con Flutter y Firebase
 
 ### Integrantes: 
 - Eduardo Farinango
