@@ -4,9 +4,21 @@
 - Eduardo Farinango
 - Luis Valencia
 
+## Videos:
+- Explicación del código
+- Funcionamiento de la aplicación APK
+
+## Despliegue de la aplicación:
+- La aplicación se encuentra desplegada en el siguiente sitio [APKFab](https://apkfab.com/bicib%C3%BAho/com.example.flutter_login_register/apk?h=539ee2da608a888dfddeaed9fbcce2dc1c76a83a823d88a1a6ea5d94ce25d911) una vez descargada podremos utilizarla en nuestro dispositivo Android
+
+![image](https://user-images.githubusercontent.com/77359338/223029442-699edc24-43c1-4fb7-96d1-28ab30fb7ca6.png)
+
+
+
 # Configuración del poyecto
 
 ## Firebase 
+![image](https://user-images.githubusercontent.com/77359338/223031416-2750b93c-73a5-4609-aeaa-c9a414a9b303.png)
 
 
 
@@ -60,6 +72,8 @@ Realizando este proceso, la aplicación se conecta con Firebase y se crea un arc
 
 
 ## Google Maps 
+![image](https://user-images.githubusercontent.com/77359338/223031144-51f77154-ab16-4fb2-8d23-984c420c19d9.png)
+
 
 Para usar los servicios de Google Maps se debe agregar/instalar la siguiente dependencia en el archivo [pubspec.yaml](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/pubspec.yaml) 
 
@@ -77,6 +91,8 @@ google_maps_flutter: ^2.2.5
 ```
 
 ## Funcionalidad del código en el Proyecto de Flutter
+
+![image](https://user-images.githubusercontent.com/77359338/223031584-411c260b-a88d-4bfe-a065-6d3ea749c368.png)
 
 ### Inicio de sesión y registro
 Para el inicio de sesión se utiliza la autenticación de Firebase importando **firebase_auth.dart** y **cloud_firestore.dart** para la colección denominada "Users"que almacenará el mail y rol que tendrá en su defecto el ciclista. 
@@ -303,6 +319,12 @@ En este código se define una clase llamada GpsBloc que se encarga de manejar el
 
 https://user-images.githubusercontent.com/75056800/223010028-682c0f25-06e0-4efb-b356-0da618feb4b0.mp4
 
-
-
+### Clonar el proyecto
+Finalmente para clonar el proyecto e instalar las dependencias en Flutter ejecutamos los siguientes comandos en cmd
+```
+// Clonar el repositorio
+git clone
+// Instalar las dependencias del proyecto
+flutter packages get
+```
 
