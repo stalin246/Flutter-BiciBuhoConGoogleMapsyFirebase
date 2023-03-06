@@ -85,7 +85,12 @@ En el registro definimos condiciones que se tendrá al iniciar sesión y se lo h
 
 Establecido el login y registro podremos poner un splash screen que funcione al iniciar la aplicación y una pantalla deslizable que nos direcciones al login, la lógica del splash lo vemos aquí [splashScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/splashScreen.dart) y lo utilizamos en la ruta que definimos en [routes.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/navigation/routes.dart), además para la otra función que se mencionó creamos un archivo [startScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/startScreen.dart) y su clase invocara al **login.dart**. Esta clase se la utiliza en las rutas de antes.
 
-#### Funcionamiento en el móvil
+## Funcionamiento en el móvil
+### Inicio de sesión 
+![image](https://user-images.githubusercontent.com/77359338/223004521-f1955f24-a297-4ce6-9299-b99d966154f8.png)
+
+### Registro
+![image](https://user-images.githubusercontent.com/77359338/223004605-c7aaf1ff-0167-421e-a50c-784952a5a2ab.png)
 
 
 
@@ -132,6 +137,8 @@ body: StreamBuilder<QuerySnapshot>(
         ),
       ),
 ```
+## Funcionamiento en el móvil
+### Lista de usuarios registrados
 Aqui tambien se muestra una implementación básica de un ListView.builder que utiliza una instancia de QuerySnapshot para obtener una lista de documentos de usuarios desde Firestore y muestra los datos en la interfaz de usuario de la aplicación.
 
 
@@ -232,7 +239,8 @@ child: Row(
 ```
 si un usuario inicia sesión con uno de los correos electrónicos autorizados para administrar, se mostrará el texto "Administrar usuarios" en la pantalla de inicio [admin.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/admin.dart) de la aplicación. Al hacer clic en este texto, se redirigirá al usuario a la pantalla de administración de usuarios, donde se podrán realizar operaciones de gestión de usuarios, como editar o eliminar usuario.
 
-
+## Funcionamiento en el móvil
+### Gestión de usuarios CRUD
 
 <div style="display: flex; justify-content: center; align-items: center;">
  
