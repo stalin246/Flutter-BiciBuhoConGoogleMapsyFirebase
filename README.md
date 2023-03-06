@@ -132,6 +132,12 @@ body: StreamBuilder<QuerySnapshot>(
         ),
       ),
 ```
+Aqui tambien se muestra una implementación básica de un ListView.builder que utiliza una instancia de QuerySnapshot para obtener una lista de documentos de usuarios desde Firestore y muestra los datos en la interfaz de usuario de la aplicación.
+
+
+
+<img src="https://user-images.githubusercontent.com/75056800/223001741-fea6a499-5f03-4f62-9463-9fd381f21ce3.jpeg" alt="listUsers" width="200" style="display: block; margin: 0 auto;">
+
 
 ### Gestión de usuarios(Usuario Admin CRUD)
 
