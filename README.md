@@ -5,7 +5,6 @@
 - Luis Valencia
 
 ## Videos:
-- [Explicación del código]()
 - [Funcionamiento de la aplicación APK](
 https://drive.google.com/file/d/1lPNjmM-ZEatPjha2cEKsE47ElpnF6ii8/view?usp=sharing)
 - [Explicación del código de la aplicación APK Youtube](
