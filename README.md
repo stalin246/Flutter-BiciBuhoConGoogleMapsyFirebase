@@ -296,7 +296,12 @@ class GpsState extends Equatable {
 }
 ```
 En este código se define una clase llamada GpsBloc que se encarga de manejar el estado del permiso de GPS y su activación. Se utilizan métodos para verificar si el permiso está activado y si el usuario ha concedido el permiso de ubicación, y se actualiza el estado en consecuencia. Cuando se produce un evento que indica un cambio en el estado del permiso de GPS, se llama a un método que obtiene el nuevo estado y emite un nuevo estado a través de una función yield. En resumen, el archivo se encarga de mantener y actualizar el estado del permiso de GPS.
-https://user-images.githubusercontent.com/75056800/223009429-6702b0f4-4bd5-47a3-a3f0-f0188fe6e946.mp4
+
+
+
+
+
+https://user-images.githubusercontent.com/75056800/223010028-682c0f25-06e0-4efb-b356-0da618feb4b0.mp4
 
 
 
