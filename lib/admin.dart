@@ -97,7 +97,7 @@ class _TeacherState extends State<Teacher> {
                           icon: Icon(Icons.delete),
                           onPressed: () async {
                             await firebaseService.deleteUserAccount(
-                                documentSnapshot.id, UserUID);
+                                documentSnapshot.id, documentSnapshot['email']);
                             Fluttertoast.showToast(msg: 'Usuario eliminado');
                           },
                           color: Colors.red,

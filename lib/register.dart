@@ -12,8 +12,6 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  _RegisterState();
-
   bool showProgress = false;
   bool visible = false;
 
@@ -30,7 +28,7 @@ class _RegisterState extends State<Register> {
   bool _isObscure2 = true;
   File? file;
   var options = [
-   'User',
+    'User',
   ];
   var _currentItemSelected = 'User';
   var rool = "User";
@@ -92,12 +90,12 @@ class _RegisterState extends State<Register> {
                           ),
                           validator: (value) {
                             if (value!.length == 0) {
-                              return "Email cannot be empty";
+                              return "El campo no puede estar vacío";
                             }
                             if (!RegExp(
                                     "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
                                 .hasMatch(value)) {
-                              return ("Please enter a valid email");
+                              return ("PIngresar un correo válido");
                             } else {
                               return null;
                             }
@@ -142,7 +140,7 @@ class _RegisterState extends State<Register> {
                               return "Password cannot be empty";
                             }
                             if (!regex.hasMatch(value)) {
-                              return ("please enter valid password min. 6 character");
+                              return ("Ingrese un password válido");
                             } else {
                               return null;
                             }
@@ -167,7 +165,7 @@ class _RegisterState extends State<Register> {
                                 }),
                             filled: true,
                             fillColor: Colors.white,
-                            hintText: 'Confirm Password',
+                            hintText: 'Confirmar Password',
                             enabled: true,
                             contentPadding: const EdgeInsets.only(
                                 left: 14.0, bottom: 8.0, top: 15.0),
@@ -183,7 +181,7 @@ class _RegisterState extends State<Register> {
                           validator: (value) {
                             if (confirmpassController.text !=
                                 passwordController.text) {
-                              return "Password did not match";
+                              return "El password no coincide";
                             } else {
                               return null;
                             }
@@ -229,7 +227,6 @@ class _RegisterState extends State<Register> {
                                   this._currentItemSelected = newValueSelected!;
                                 });
                               },
-                              
                               value: _currentItemSelected,
                             ),
                           ],
@@ -248,29 +245,6 @@ class _RegisterState extends State<Register> {
                               elevation: 5.0,
                               height: 40,
                               onPressed: () {
-                                CircularProgressIndicator();
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LoginPage(),
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                "Login",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                              color: Colors.white,
-                            ),
-                            MaterialButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20.0))),
-                              elevation: 5.0,
-                              height: 40,
-                              onPressed: () {
                                 setState(() {
                                   showProgress = true;
                                 });
@@ -278,7 +252,7 @@ class _RegisterState extends State<Register> {
                                     passwordController.text, rool);
                               },
                               child: Text(
-                                "Registrarse",
+                                "Registrarse e inicie sesión",
                                 style: TextStyle(
                                   fontSize: 20,
                                 ),
@@ -291,7 +265,7 @@ class _RegisterState extends State<Register> {
                           height: 20,
                         ),
                         Text(
-                          "BiciBuho",
+                          "BiciBúho",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
@@ -322,9 +296,15 @@ class _RegisterState extends State<Register> {
 
   postDetailsToFirestore(String email, String rool) async {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-    var user = _auth.currentUser;
-    CollectionReference ref = FirebaseFirestore.instance.collection('users');
-    ref.doc(user!.uid).set({'email': emailController.text, 'rol': rool});
+    final User? user = _auth.currentUser;
+    final CollectionReference ref =
+        FirebaseFirestore.instance.collection('users');
+    try {
+      await ref.doc(user!.uid).set({'email': email, 'rol': rool});
+    } catch (e) {
+      print(e.toString());
+    }
+
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const StartScreen()));
   }

@@ -111,17 +111,38 @@ Widget build(BuildContext context) {
 
       },
     ),
-    floatingActionButton: FloatingActionButton(
-      child: const Icon(Icons.map),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const LoadingScreen(),
+    
+    floatingActionButton: Stack(
+      children: [
+        Positioned.fill(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoadingScreen(),
+                  ),
+                );
+              },
+              child: const Icon(Icons.map),
+            ),
           ),
-        );
-      },
+        ),
+        Positioned(
+          bottom: 80.0,
+          left: 0, 
+          right: 0,
+          child: const Text(
+            'Ver el mapa.',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16.0),
+          ),
+        ),
+      ],
     ),
+
     bottomNavigationBar: BottomAppBar(
   color: Colors.white,
   child: Container(

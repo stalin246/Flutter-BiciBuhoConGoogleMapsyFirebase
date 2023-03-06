@@ -247,7 +247,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         Text(
-                          "Buho",
+                          "Búho",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
