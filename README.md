@@ -323,7 +323,7 @@ https://user-images.githubusercontent.com/75056800/223010028-682c0f25-06e0-4efb-
 Finalmente para clonar el proyecto e instalar las dependencias en Flutter ejecutamos los siguientes comandos en cmd
 ```
 // Clonar el repositorio
-git clone
+git clone https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase.git
 // Instalar las dependencias del proyecto
 flutter packages get
 ```
