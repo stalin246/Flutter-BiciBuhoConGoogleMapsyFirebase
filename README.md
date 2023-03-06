@@ -85,12 +85,7 @@ En el registro definimos condiciones que se tendrá al iniciar sesión y se lo h
 
 Establecido el login y registro podremos poner un splash screen que funcione al iniciar la aplicación y una pantalla deslizable que nos direcciones al login, la lógica del splash lo vemos aquí [splashScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/splashScreen.dart) y lo utilizamos en la ruta que definimos en [routes.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/navigation/routes.dart), además para la otra función que se mencionó creamos un archivo [startScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/startScreen.dart) y su clase invocara al **login.dart**. Esta clase se la utiliza en las rutas de antes.
 
-## Funcionamiento en el móvil
-### Inicio de sesión 
-![image](https://user-images.githubusercontent.com/77359338/223004521-f1955f24-a297-4ce6-9299-b99d966154f8.png)
-
-### Registro
-![image](https://user-images.githubusercontent.com/77359338/223004605-c7aaf1ff-0167-421e-a50c-784952a5a2ab.png)
+#### Funcionamiento en el móvil
 
 
 
@@ -137,8 +132,6 @@ body: StreamBuilder<QuerySnapshot>(
         ),
       ),
 ```
-## Funcionamiento en el móvil
-### Lista de usuarios registrados
 Aqui tambien se muestra una implementación básica de un ListView.builder que utiliza una instancia de QuerySnapshot para obtener una lista de documentos de usuarios desde Firestore y muestra los datos en la interfaz de usuario de la aplicación.
 
 
@@ -239,8 +232,7 @@ child: Row(
 ```
 si un usuario inicia sesión con uno de los correos electrónicos autorizados para administrar, se mostrará el texto "Administrar usuarios" en la pantalla de inicio [admin.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/admin.dart) de la aplicación. Al hacer clic en este texto, se redirigirá al usuario a la pantalla de administración de usuarios, donde se podrán realizar operaciones de gestión de usuarios, como editar o eliminar usuario.
 
-## Funcionamiento en el móvil
-### Gestión de usuarios CRUD
+
 
 <div style="display: flex; justify-content: center; align-items: center;">
  
@@ -261,10 +253,16 @@ que alojara la parte lógica para solicitar estos permisos para que finalmente e
 
 Ya configurado los apikey de gooole Maps, en la carpeta  [screens](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/tree/master/lib/screens) y archivo  [map_screen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/screens/map_screen.dart) trabajamos con la lógica y la parte ui que tendrá el mapa y definimos las propiedades principales que se utilizaran que en este caso será la ubicación a tiempo real en el mapa de Google del usuario logueado, marcadores a tiempo real para cada usuario/ciclistas y que esta información se actualice en Firestore según se cambie la ubicación en donde se creara una colección denominada **userLocations** con campo y valor(location y timestamp) y esta colección estará asociada su ID con el **nombre del correo** que está alojada como campo en otra colección que es la principal denominada **users**, finalmente en el archivo  [loading_screen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/screens/loading_screen.dart) se crea una clase que englobe la pantalla de habilitacion de GPS y el mapa. Mediante este proceso se puede mostrar las ubicaciones en el mapa de Google a través de marcadores del usuario/ciclista registrado una vez que ellos inicialicen esa función que se encuentra en el archivo [homeScreen.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/src/ui/homeScreen.dart) como botón flotante de **mapa**
 
-## Funcionamiento en el móvil
-### Geolocalización
-![image](https://user-images.githubusercontent.com/77359338/223006198-9ff03c1e-1c4f-44ce-a1b6-5bb1dc26f1d0.png)
+Esta aplicación requiere acceso al GPS y a Internet, por ello se deberá agregar los permisos correspondientes en el archivo AndroidManifest.xml del proyecto. Para agregar los permisos de acceso al GPS e Internet, debe agregar las siguientes líneas de código dentro del elemento manifest en el archivo [AndroidManifest.xml](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/android/app/src/main/AndroidManifest.xml):
 
+
+```sh
+ <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+```
 
 
 
