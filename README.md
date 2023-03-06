@@ -230,6 +230,17 @@ child: Row(
               );
             },
 ```
+si un usuario inicia sesión con uno de los correos electrónicos autorizados para administrar, se mostrará el texto "Administrar usuarios" en la pantalla de inicio [admin.dart](https://github.com/stalin246/Flutter-BiciBuhoconGoogleMapsyFirebase/blob/master/lib/admin.dart) de la aplicación. Al hacer clic en este texto, se redirigirá al usuario a la pantalla de administración de usuarios, donde se podrán realizar operaciones de gestión de usuarios, como editar o eliminar usuario.
+
+
+
+<div style="display: flex; justify-content: center; align-items: center;">
+ 
+https://user-images.githubusercontent.com/75056800/223006859-c41129b2-6804-4d40-a921-fd23447d277e.mp4
+ 
+</div>
+
+
 
 
 
