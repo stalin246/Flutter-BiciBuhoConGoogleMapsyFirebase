@@ -91,6 +91,7 @@ Establecido el login y registro podremos poner un splash screen que funcione al 
 
 
 ### Lista de usuarios(Usuario Común)
+Una vez que un usuario/ciclista haya iniciado sesión en su aplicación de Flutter y haya autenticado sus credenciales con Firebase, podrá acceder a la base de datos de Firestore para recuperar una lista de usuarios registrados en la colección correspondiente. Para ello, se puede utilizar un StreamBuilder que escuche los cambios en la colección y muestre los datos actualizados en la interfaz de usuario de la aplicación. Es importante tener en cuenta que se necesitan los permisos adecuados en la base de datos de Firestore para acceder a la colección y sus documentos.
 
 ### Gestión de usuarios(Usuario Admin CRUD)
 
